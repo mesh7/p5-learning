@@ -1,12 +1,11 @@
 function setup() {
-    createCanvas(100, 100, SVG);
-    background(255);
-    fill(150);
-    stroke(150);
+    createCanvas(500, 500, SVG);
+    noLoop();
 }
 
 function draw() {
-    var r = frameCount % 200 * Math.sqrt(2);
-    background(255);
-    ellipse(0, 0, r, r);
+   background('teal');
+   fill(0);
+   translate(height/2, width/2);
+   rect(0, 0, 25, 25);
 }
