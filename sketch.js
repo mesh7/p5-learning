@@ -1,11 +1,21 @@
+const CRYSTAL_SIZE = 500;
+const SIDES = 6;
+
 function setup() {
-    createCanvas(500, 500, SVG);
-    noLoop();
+  createCanvas(550, 550, SVG);
+  noLoop();
+  angleMode(DEGREES);
+  rectMode(CENTER);
 }
 
 function draw() {
-   background('teal');
-   fill(0);
-   translate(height/2, width/2);
-   rect(0, 0, 25, 25);
+  noFill(0);
+  stroke(0);
+  push();
+  translate(width / 2, height / 2);
+  ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE);
+  for (i = 0; i < 6; i++) {
+    line(0, 0, 0, CRYSTAL_SIZE / 2);
+  }
+  pop();
 }
