@@ -3,6 +3,7 @@
 // add random weight and color
 // add hexagon
 
+const hello = 5;
 const CRYSTAL_SIZE = 500;
 const SIDES = 6;
 let PALETTE = [];
@@ -21,10 +22,29 @@ function setup() {
 }
 
 function draw() {
-    testLines()
-    outlineShape()
-    simpleLines()
-  circle();
+  let circleLayer = new Circles();
+  circleLayer.render();
+
+
+  // let picker = random(0, 1);
+  // if (picker > 0.6) {
+  //   outlineShape();
+  // }
+
+  // picker = random(0, 1);
+  // if (picker > 0.5) {
+  //   simpleLines();
+  // }
+
+  // picker = random(0, 1);
+  // if (picker > 0.7) {
+  //   testLines();
+  // }
+
+  // picker = random(0, 1);
+  // if (picker > 0.4) {
+  //   circle();
+  // }
 }
 
 function simpleLines() {
@@ -77,25 +97,25 @@ function outlineShape() {
 }
 
 // Drawing circles on the test-lines
-function circle() {
-  const numShapes = SIDES;
-  const strokeColor = getRandomFromPalette();
-  const weight = randomSelectTwo() ? 1 : 3;
-  circleSize = (CRYSTAL_SIZE / 2) * 0.93;
-  const position = (CRYSTAL_SIZE / 2) - (circleSize / 2);
+// function circle() {
+//   const numShapes = SIDES;
+//   const strokeColor = getRandomFromPalette();
+//   const weight = randomSelectTwo() ? 1 : 3;
+//   circleSize = (CRYSTAL_SIZE / 2) * 0.93;
+//   const position = CRYSTAL_SIZE / 2 - circleSize / 2;
 
-  noFill();
-  stroke(strokeColor);
-  strokeWeight(weight);
-  push();
-  translate(width / 2, height / 2);
-  const angle = 360 / numShapes;
-  for (let i = 0; i < numShapes; i++) {
-    ellipse(position, 0, circleSize, circleSize);
-    rotate(angle);
-  }
-  pop();
-}
+//   noFill();
+//   stroke(strokeColor);
+//   strokeWeight(weight);
+//   push();
+//   translate(width / 2, height / 2);
+//   const angle = 360 / numShapes;
+//   for (let i = 0; i < numShapes; i++) {
+//     ellipse(position, 0, circleSize, circleSize);
+//     rotate(angle);
+//   }
+//   pop();
+// }
 
 // Drawing inner lines of pattern
 function testLines() {
