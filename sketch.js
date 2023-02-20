@@ -25,6 +25,9 @@ function draw() {
   let circleLayer = new Circles();
   circleLayer.render();
 
+  let simpleLines = new SimpleLines();
+  simpleLines.render();
+
 
   // let picker = random(0, 1);
   // if (picker > 0.6) {
