@@ -9,7 +9,9 @@ const SIDES = 6;
 let PALETTE = [];
 
 function setup() {
-  createCanvas(530, 530, SVG);
+  
+  // createCanvas(530, 530, SVG);
+  createCanvas(windowWidth, windowHeight, SVG);
 
   PALETTE = [
     color(255, 52, 154), // pink
@@ -22,12 +24,12 @@ function setup() {
 }
 
 function draw() {
+  console.log(window.screen.size)
   let circleLayer = new Circles();
   circleLayer.render();
 
   let simpleLines = new SimpleLines();
   simpleLines.render();
-
 
   // let picker = random(0, 1);
   // if (picker > 0.6) {
@@ -48,6 +50,21 @@ function draw() {
   // if (picker > 0.4) {
   //   circle();
   // }
+}
+
+// Window resized function to
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
+function shapeSize() {
+  if (screen.size > 786) {
+    return 500;
+  }
+
+  if (screen.size < 786) {
+    return 200;
+  }
 }
 
 function simpleLines() {
